@@ -20,12 +20,14 @@ mapa-uoc/
     ├── main.js           # Punto de entrada y gestión de eventos
     ├── data/
     │   ├── asignaturas.js  # Catálogo de asignaturas (dificultad, evaluación, requisitos…)
-    │   └── config.js       # Reconocidas, itinerarios, bloques, niveles, combos
+    │   ├── config.js       # Reconocidas, itinerarios, bloques, niveles, combos
+    │   └── ingles.js       # Curso English B1 annual: entregas, reglas y recursos
     ├── core/
     │   ├── state.js        # Estado y guardado en localStorage
     │   ├── progreso.js     # Cálculo de créditos y niveles
     │   └── utils.js        # Utilidades compartidas
     └── ui/
+        ├── ingles.js       # Apartado del curso de inglés
         ├── hero.js         # Cabecera animada: el grado como placa de circuito
         ├── marcador.js     # Anillo de créditos, hitos y logros
         ├── ranking.js      # Lista filtrable de asignaturas

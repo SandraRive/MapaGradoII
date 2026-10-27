@@ -175,3 +175,56 @@ section{margin-top:34px}
 .hero-legend i{width:10px;height:10px;border-radius:50%;display:block;box-shadow:0 0 8px currentColor}
 .hero-cap{margin:0;font-size:13px;color:var(--h-muted);max-width:46ch}
 @media (prefers-reduced-motion:reduce){.hero-term .cursor{animation:none}}
+
+/* ===== Curso de inglés ===== */
+.ing{display:grid;gap:16px;margin-bottom:34px}
+.ing-head{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:flex-end}
+.ing-head>div:first-child{min-width:0;flex:1 1 420px}
+.ing-head h2{font-size:clamp(26px,3vw,36px);font-weight:800;margin-top:4px}
+.ing-next{background:var(--sheet);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:12px 16px;display:grid;gap:2px;min-width:240px}
+.ing-next b{font-family:var(--f-display);font-size:18px}
+.ing-when{font-size:13.5px;color:var(--muted)}
+.ing-when.urgent{color:var(--d4);font-weight:700}
+.ing-grid{display:grid;grid-template-columns:minmax(0,1fr) clamp(300px,30vw,480px);gap:16px;align-items:start}
+@media (max-width:900px){.ing-grid{grid-template-columns:1fr}}
+.ing-side{display:grid;gap:16px}
+.ing-panel{background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px;min-width:0;align-content:start}
+.ing-panel h3{font-size:17px}
+.ing-panel-h{display:flex;justify-content:space-between;align-items:baseline}
+.ing-count{font-family:var(--f-display);font-size:22px;font-variant-numeric:tabular-nums}
+.ing-late{margin:0;font-size:13px;color:var(--d4);font-weight:700}
+.ing-timeline{display:grid;gap:14px;margin-top:4px}
+.ing-month{display:grid;gap:6px}
+.ing-month-n{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ing-acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+.ing-act{font:inherit;text-align:left;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 11px;display:grid;grid-template-columns:22px minmax(0,1fr);gap:2px 10px;cursor:pointer;align-items:center}
+.ing-act:hover{border-color:var(--accent)}
+.ing-check{grid-row:span 2;width:22px;height:22px;border-radius:6px;border:2px solid var(--line);display:grid;place-items:center;font-weight:800;font-size:13px;color:var(--sheet)}
+.ing-name{font-weight:700;font-size:14px}
+.ing-meta{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.ing-type{font-family:var(--f-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;padding:1px 6px;border-radius:4px;background:var(--soft)}
+.ing-type.tandem{color:var(--rec)}
+.ing-type.quiz{color:var(--d3)}
+.ing-act.hecha{opacity:.6}
+.ing-act.hecha .ing-check{background:var(--d1);border-color:var(--d1)}
+.ing-act.hecha .ing-name{text-decoration:line-through}
+.ing-act.abierta{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.ing-act.atrasada{border-color:var(--d4)}
+.ing-act.atrasada .ing-check{border-color:var(--d4)}
+.ing-act.next{border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--sheet))}
+.ing-split{display:flex;height:28px;border-radius:7px;overflow:hidden;font-size:12.5px;font-weight:700;color:var(--accent-ink)}
+.ing-split span{display:flex;align-items:center;justify-content:center}
+.ing-min{margin:0;padding-left:18px;font-size:14px;display:grid;gap:3px}
+.ing-pf{display:grid;gap:6px}
+.ing-skill{display:grid;grid-template-columns:80px minmax(0,1fr) 40px;gap:10px;align-items:center;font-size:13.5px}
+.ing-skill b{font-family:var(--f-mono);font-size:12px;text-align:right}
+.ing-skill-bar{height:8px;border-radius:4px;background:var(--soft);overflow:hidden}
+.ing-skill-bar i{display:block;height:100%;background:var(--d4);border-radius:4px}
+.ing-units{display:flex;flex-wrap:wrap;gap:6px}
+.ing-unit{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--soft)}
+.ing-unit.quiz{color:var(--d3);border:1px solid var(--d3);background:transparent}
+.ing-unit.tool{color:var(--accent);border:1px solid var(--accent);background:transparent}
+.ing-rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.ing-rule{display:grid;gap:3px;padding:10px 12px;border-radius:9px;background:var(--soft);font-size:13.5px}
+.ing-rule b{font-family:var(--f-display);font-size:14.5px}
+.ing-rule span{color:var(--muted)}

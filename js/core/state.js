@@ -7,6 +7,7 @@ export const state = {
   perfilMates: true,
   cesta: new Set(CESTA_INICIAL),
   aprobadas: new Set(),
+  ingles: new Set(), // actividades del curso de inglés entregadas
   esEjemplo: true,
 };
 
@@ -19,6 +20,7 @@ export function guardar() {
     aprobadas: [...state.aprobadas],
     cesta: [...state.cesta],
     perfilMates: state.perfilMates,
+    ingles: [...state.ingles],
   };
   try {
     localStorage.setItem(CLAVE_GUARDADO, JSON.stringify(datos));
@@ -45,4 +47,5 @@ export function cargar() {
     state.esEjemplo = false;
   }
   if (typeof perfil === "boolean") state.perfilMates = perfil;
+  if (Array.isArray(datos.ingles)) state.ingles = new Set(datos.ingles);
 }

@@ -7,6 +7,7 @@ import { renderRanking } from "./ui/ranking.js";
 import { renderCesta } from "./ui/cesta.js";
 import { renderItinerarios, renderCombos } from "./ui/itinerarios.js";
 import { initHero, updateHero } from "./ui/hero.js";
+import { initIngles, renderIngles } from "./ui/ingles.js";
 
 function renderTodo() {
   renderRanking();
@@ -15,6 +16,7 @@ function renderTodo() {
   renderItinerarios();
   renderCombos();
   updateHero();
+  renderIngles();
   $("perfil").setAttribute("aria-pressed", state.perfilMates);
   $("vertodo").setAttribute("aria-pressed", state.filtros.verTodo);
 }
@@ -35,6 +37,13 @@ document.addEventListener("click", (e) => {
   if (ds.o) { filtros.orden = ds.o; marcarGrupo("[data-o]", b); return renderRanking(); }
   if (b.id === "vertodo") { filtros.verTodo = !filtros.verTodo; return renderTodo(); }
   if (b.id === "perfil") { state.perfilMates = !state.perfilMates; guardar(); return renderTodo(); }
+
+  // Entregas del curso de inglés
+  if (ds.ing) {
+    state.ingles.has(ds.ing) ? state.ingles.delete(ds.ing) : state.ingles.add(ds.ing);
+    guardar();
+    return renderIngles();
+  }
 
   // Acciones que cambian el progreso o la cesta
   if (ds.id) {
@@ -61,4 +70,5 @@ $("q").addEventListener("input", (e) => {
 
 cargar();
 initHero();
+initIngles();
 renderTodo();
