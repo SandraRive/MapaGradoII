@@ -148,3 +148,28 @@ section{margin-top:34px}
 .combo ol{margin:0;padding-left:18px;font-size:14px}
 .combo button{justify-self:start}
 .empty{color:var(--muted);font-size:14px;padding:20px;text-align:center}
+
+/* ===== Hero: el grado como placa de circuito ===== */
+:root{
+  --h-bg:#0a1020; --h-bg2:#101a33; --h-ink:#eef2ff; --h-muted:#9fb0d6; --h-trace:#22345e;
+  --h-rec:#b18cff; --h-ok:#4cd68f; --h-cart:#63a4ff; --h-todo:#4a5a80; --h-glow:#7d9cff;
+}
+.hero{margin-top:0;position:relative;overflow:hidden;background:radial-gradient(120% 140% at 85% 10%,var(--h-bg2),var(--h-bg) 60%);color:var(--h-ink);min-height:420px;display:flex;align-items:center;border-bottom:1px solid var(--h-trace)}
+.hero-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--h-bg) 0%,color-mix(in srgb,var(--h-bg) 82%,transparent) 34%,transparent 62%);pointer-events:none}
+@media (max-width:700px){.hero::after{background:linear-gradient(180deg,color-mix(in srgb,var(--h-bg) 55%,transparent),color-mix(in srgb,var(--h-bg) 88%,transparent))}}
+.hero-inner{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding-block:48px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:16px;justify-items:start}
+.hero-eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--h-muted)}
+.hero h1{font-size:clamp(46px,8vw,96px);line-height:.92;letter-spacing:-.035em;font-weight:800;color:var(--h-ink)}
+.hero h1 span{background:linear-gradient(90deg,var(--h-rec),var(--h-cart) 55%,var(--h-ok));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-term{font-family:var(--f-mono);font-size:14px;line-height:1.6;background:color-mix(in srgb,var(--h-bg) 75%,transparent);border:1px solid var(--h-trace);border-radius:8px;padding:10px 14px;max-width:100%;backdrop-filter:blur(4px)}
+.hero-term .prompt{color:var(--h-ok)}
+.hero-term .cmd{color:var(--h-ink)}
+.hero-term .out{color:var(--h-muted)}
+.hero-term .cursor{display:inline-block;width:8px;height:15px;margin-left:4px;vertical-align:-2px;background:var(--h-ok);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--h-muted)}
+.hero-legend span{display:inline-flex;align-items:center;gap:7px}
+.hero-legend i{width:10px;height:10px;border-radius:50%;display:block;box-shadow:0 0 8px currentColor}
+.hero-cap{margin:0;font-size:13px;color:var(--h-muted);max-width:46ch}
+@media (prefers-reduced-motion:reduce){.hero-term .cursor{animation:none}}

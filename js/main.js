@@ -6,6 +6,7 @@ import { renderMarcador } from "./ui/marcador.js";
 import { renderRanking } from "./ui/ranking.js";
 import { renderCesta } from "./ui/cesta.js";
 import { renderItinerarios, renderCombos } from "./ui/itinerarios.js";
+import { initHero, updateHero } from "./ui/hero.js";
 
 function renderTodo() {
   renderRanking();
@@ -13,6 +14,7 @@ function renderTodo() {
   renderCesta();
   renderItinerarios();
   renderCombos();
+  updateHero();
   $("perfil").setAttribute("aria-pressed", state.perfilMates);
   $("vertodo").setAttribute("aria-pressed", state.filtros.verTodo);
 }
@@ -58,4 +60,5 @@ $("q").addEventListener("input", (e) => {
 });
 
 cargar();
+initHero();
 renderTodo();

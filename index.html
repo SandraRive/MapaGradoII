@@ -13,12 +13,29 @@
 </head>
 <body>
 
+<section class="hero" aria-labelledby="hero-title">
+  <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">UOC · Grado en Ingeniería Informática · 240 ECTS</div>
+    <h1 id="hero-title">Mapa de<br><span>matrícula</span></h1>
+    <div class="hero-term" aria-live="polite">
+      <span class="prompt">sandra@uoc:~$</span> <span class="cmd">progreso --grado</span><br>
+      <span class="out" id="hero-out">60/240 créditos · nivel 3 · Depuradora en prácticas</span><span class="cursor" aria-hidden="true"></span>
+    </div>
+    <div class="hero-legend">
+      <span><i style="background:var(--h-rec)"></i>Reconocida</span>
+      <span><i style="background:var(--h-ok)"></i>Aprobada</span>
+      <span><i style="background:var(--h-cart)"></i>En tu cesta</span>
+      <span><i style="background:var(--h-todo)"></i>Pendiente</span>
+    </div>
+    <p class="hero-cap">Cada nodo es una asignatura y cada pista, un requisito. De izquierda a derecha, el orden en que se desbloquean.</p>
+  </div>
+</section>
+
 <div class="wrap">
 <header>
   <div>
-    <div class="eyebrow">Grado en Ingeniería Informática · UOC · fichas del semestre 2026‑2 (feb–jun 2027)</div>
-    <h1>Mapa de matrícula de Sandra</h1>
-    <p class="lede">Partes con 60 créditos reconocidos por el ciclo de DAM. Te quedan 45 asignaturas más el TFG, cada una puntuada del 1 al 5 según cómo se evalúa, qué contenido tiene, qué requisitos pide y lo que avisa su ficha. Con «Mi perfil» activado, las de mates y razonamiento formal suben un punto.</p>
+    <p class="lede">Partes con 60 créditos reconocidos por el ciclo de DAM. Te quedan 45 asignaturas más el TFG, cada una puntuada del 1 al 5 según cómo se evalúa, qué contenido tiene, qué requisitos pide y lo que avisa su ficha. Con «Mi perfil» activado, las de mates y razonamiento formal suben un punto. Fichas del semestre 2026‑2 (feb–jun 2027).</p>
   </div>
   <div class="scale" aria-label="Escala de dificultad">
     <span class="chip"><span class="dot" style="background:var(--d1)"></span>1 · Muy fácil</span>

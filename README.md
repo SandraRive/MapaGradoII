@@ -26,6 +26,7 @@ mapa-uoc/
     │   ├── progreso.js     # Cálculo de créditos y niveles
     │   └── utils.js        # Utilidades compartidas
     └── ui/
+        ├── hero.js         # Cabecera animada: el grado como placa de circuito
         ├── marcador.js     # Anillo de créditos, hitos y logros
         ├── ranking.js      # Lista filtrable de asignaturas
         ├── cesta.js        # Simulador de matrícula
