@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Ranking de dificultad, simulador de matrícula y marcador de créditos del Grado en Ingeniería Informática de la UOC.">
+  <title>Mapa de Matrícula UOC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">Grado en Ingeniería Informática · UOC · fichas del semestre 2026‑2 (feb–jun 2027)</div>
+    <h1>Mapa de matrícula de Sandra</h1>
+    <p class="lede">Partes con 60 créditos reconocidos por el ciclo de DAM. Te quedan 45 asignaturas más el TFG, cada una puntuada del 1 al 5 según cómo se evalúa, qué contenido tiene, qué requisitos pide y lo que avisa su ficha. Con «Mi perfil» activado, las de mates y razonamiento formal suben un punto.</p>
+  </div>
+  <div class="scale" aria-label="Escala de dificultad">
+    <span class="chip"><span class="dot" style="background:var(--d1)"></span>1 · Muy fácil</span>
+    <span class="chip"><span class="dot" style="background:var(--d2)"></span>2 · Fácil</span>
+    <span class="chip"><span class="dot" style="background:var(--d3)"></span>3 · Media</span>
+    <span class="chip"><span class="dot" style="background:var(--d4)"></span>4 · Difícil</span>
+    <span class="chip"><span class="dot" style="background:var(--d5)"></span>5 · Muy difícil</span>
+  </div>
+</header>
+
+<div class="board" aria-label="Tus créditos">
+  <div class="board-top">
+    <div class="ring" id="ring"><div><b id="r-num">60</b><small>de 240 créditos</small></div></div>
+    <div class="lvl">
+      <div class="eyebrow" id="lvl-n">Nivel 3</div>
+      <div class="name" id="lvl-name">—</div>
+      <div class="xp"><span class="ghost" id="xp-g"></span><span class="real" id="xp-r"></span></div>
+      <p id="lvl-next">—</p>
+      <div class="eta" id="eta"></div>
+    </div>
+  </div>
+  <div class="road" id="road"></div>
+  <div class="blocks" id="blocks"></div>
+  <div class="legend">
+    <span><span class="dot" style="background:var(--rec)"></span>Reconocido por DAM</span>
+    <span><span class="dot" style="background:var(--d1)"></span>Aprobado en la UOC</span>
+    <span><span class="dot" style="background:var(--accent);opacity:.35"></span>En tu cesta (si lo apruebas)</span>
+  </div>
+  <div>
+    <div class="eyebrow" style="margin-bottom:8px">Logros</div>
+    <div class="badges" id="badges"></div>
+  </div>
+  <p class="save" id="save">Marca «Marcar aprobada» en cada asignatura que vayas sacando y el marcador sube solo. El progreso se guarda en este navegador.</p>
+</div>
+
+<div class="layout">
+  <div>
+    <h2>Ranking de lo que te queda</h2>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Tipo">
+        <button id="t-all" data-t="all" aria-pressed="true">Todas</button>
+        <button id="t-B" data-t="B" aria-pressed="false">Básicas</button>
+        <button id="t-O" data-t="O" aria-pressed="false">Obligatorias</button>
+        <button id="t-Op" data-t="Op" aria-pressed="false">Optativas</button>
+      </div>
+      <div class="seg" role="group" aria-label="Evaluación">
+        <button id="e-all" data-e="all" aria-pressed="true">Cualquier evaluación</button>
+        <button id="e-EC" data-e="EC" aria-pressed="false">Sin examen</button>
+        <button id="e-PF" data-e="PF" aria-pressed="false">Con examen</button>
+      </div>
+      <div class="seg" role="group" aria-label="Orden">
+        <button id="o-asc" data-o="asc" aria-pressed="true">Fáciles primero</button>
+        <button id="o-desc" data-o="desc" aria-pressed="false">Difíciles primero</button>
+      </div>
+      <button class="toggle" id="perfil" aria-pressed="true">Mi perfil: mates flojas</button>
+      <button class="toggle ghosty" id="vertodo" aria-pressed="false">Ver también las que ya tengo</button>
+      <input type="search" id="q" placeholder="Buscar asignatura…" aria-label="Buscar asignatura">
+    </div>
+    <div class="list" id="list"></div>
+  </div>
+
+  <aside class="cart" aria-label="Simulador de matrícula">
+    <div>
+      <div class="eyebrow">Simulador de matrícula</div>
+      <div class="verdict" id="verdict">—</div>
+    </div>
+    <div class="meter" aria-hidden="true"><span id="meter"></span></div>
+    <div class="stats">
+      <div class="stat"><b id="s-cr">0</b><small>créditos</small></div>
+      <div class="stat"><b id="s-ex">0</b><small>exámenes</small></div>
+      <div class="stat"><b id="s-avg">–</b><small>dificultad media</small></div>
+    </div>
+    <ul id="cart"></ul>
+    <div class="alerts" id="alerts"></div>
+    <p class="note" id="cart-note">Cargada con mi propuesta para febrero. Quita o añade lo que quieras.</p>
+  </aside>
+</div>
+
+<section>
+  <h2>¿Qué itinerario te conviene?</h2>
+  <p class="lede">Tienes que completar uno para titularte. Gracias al DAM, en Sistemas de información ya llevas hecho una cuarta parte y lo que falta es todo de dificultad 2 y sin examen. La barra muestra la dificultad media de lo que te queda en cada uno.</p>
+  <div class="itins" id="itins"></div>
+</section>
+
+<section>
+  <h2>Combinaciones que te propongo</h2>
+  <div class="combos" id="combos"></div>
+</section>
+
+<section>
+  <h2>Cómo leer esto</h2>
+  <p class="lede">Las puntuaciones son mi estimación a partir de las fichas oficiales, no estadísticas de aprobados (la UOC no las publica por asignatura). Las asignaturas marcadas «sin ficha» no venían en tu PDF; esas las valoro por su contenido habitual. Confirma en el campus el reconocimiento definitivo de los 60 créditos y el semestre en que se ofrece cada optativa: el plan indica que algunas solo salen en sep–feb o en feb–jun.</p>
+</section>
+</div>
+</body>
+</html>
